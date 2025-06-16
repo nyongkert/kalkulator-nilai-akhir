@@ -3,88 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kalkulator Nilai Akhir Mahasiswa RPL</title>
-
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Link ke file CSS -->
+    <title>Pengumuman Penting</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <img src="logo_Universitas-Patimura-thumb (1).webp" alt="Logo RPL" />
-      </div>
-      <h1>Kalkulator Nilai Akhir RPL</h1>
-    </header>
-
-    <div class="form-container">
-      <form id="formNilai">
-        <input
-          type="text"
-          id="nama"
-          placeholder="Nama Mahasiswa"
-          required
-          autocomplete="off"
-        />
-        <input
-          type="text"
-          id="nim"
-          placeholder="NIM"
-          required
-          autocomplete="off"
-          inputmode="numeric"
-        />
-        <div id="pesanNim" class="peringatan"></div>
-
-        <input
-          type="number"
-          id="tugas"
-          placeholder="Nilai Tugas (0-100)"
-          required
-          min="0"
-          max="100"
-        />
-        <input
-          type="number"
-          id="uts"
-          placeholder="Nilai UTS (0-100)"
-          required
-          min="0"
-          max="100"
-        />
-        <input
-          type="number"
-          id="uas"
-          placeholder="Nilai UAS (0-100)"
-          required
-          min="0"
-          max="100"
-        />
-        <button type="submit">Hitung Nilai Akhir</button>
-      </form>
-      <div class="result" id="hasilText"></div>
+    <div class="container">
+      <h1>PENGUMUMAN PENTING</h1>
+      <p>Segera klik tombol di bawah untuk melihat isi pengumuman ini.</p>
+      <button id="revealBtn">Buka Pengumuman</button>
     </div>
 
-    <div class="table-container">
-      <table id="tabelHasil" aria-label="Tabel hasil nilai mahasiswa">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>NIM</th>
-            <th>Nilai Akhir</th>
-            <th>Keterangan</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+    <div id="jumpscare" class="hidden">
+      <video id="scareVideo" src="jumpscare.mp4" autoplay></video>
     </div>
-    <!-- Link ke file JavaScript -->
-    <script src="scrip.js"></script>
+
+    <script src="script.js"></script>
   </body>
 </html>
