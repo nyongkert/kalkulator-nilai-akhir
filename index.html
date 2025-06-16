@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pendaftaran Maba</title>
+    <style>
+      /* Reset style dasar */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 320px;
+        overflow: hidden;
+        transition: transform 0.2s;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        background: #d1e9ff;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .card-content small {
+        color: #3b5bdb;
+        font-weight: bold;
+      }
+
+      .card-content p {
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #333;
+      }
+
+      /* Pop-up video container (awalnya disembunyikan) */
+      .video-popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
+
+      .video-popup video {
+        width: 90%;
+        max-width: 700px;
+        border-radius: 10px;
+      }
+
+      .video-popup.active {
+        display: flex;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Judul halaman -->
+    <h1>Pendaftaran Maba</h1>
+
+    <!-- Kontainer utama -->
+    <div class="container">
+      <!-- Kartu 1 -->
+      <div class="card">
+        <img src="polnam.png" alt="Pengumuman" />
+        <div class="card-content">
+          <small>Pengumuman</small>
+          <p>BATAS PENDAFTARAN DAN JADWAL TES JALUR MANDIRI GELOMBANG 1</p>
+        </div>
+      </div>
+
+      <!-- Kartu 2 -->
+      <div class="card">
+        <img src="polnam.png" alt="Pengumuman" />
+        <div class="card-content">
+          <small>Pengumuman</small>
+          <p>JADWAL DAFTAR ULANG DAN PEMBAYARAN UKT JALUR SNBT TAHUN 2025</p>
+        </div>
+      </div>
+
+      <!-- Kartu 3 - Video trigger -->
+      <div class="card" onclick="openVideo()">
+        <img src="polnam.png" alt="Pengumuman Libur" />
+        <div class="card-content">
+          <small>Pengumuman</small>
+          <p>
+            PEMBERITAHUAN BAGI SELURUH MAHASISWA TRSMM BAHWA TGL 5 JUNI KUJUNGAN
+            KE BLOK MASELA
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop-up video player -->
+    <div class="video-popup" id="videoPopup" onclick="closeVideo()">
+      <!-- Ganti src video sesuai file kamu -->
+      <video id="jamscerVideo" controls>
+        <source src="vdjum.mp4" type="video/mp4" />
+        Browser Anda tidak mendukung video.
+      </video>
+    </div>
+
+    <script>
+      function openVideo() {
+        const popup = document.getElementById("videoPopup");
+        const video = document.getElementById("jamscerVideo");
+
+        popup.classList.add("active");
+        video.play();
+
+        // Coba minta fullscreen
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen(); // Safari
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen(); // IE/Edge lama
+        }
+      }
+    </script>
+  </body>
+</html>
